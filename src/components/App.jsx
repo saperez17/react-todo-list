@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TodoItem from "./TodoItem";
 
 function App() {
   const [item, setItem] = useState("");
@@ -34,7 +35,7 @@ function App() {
           {itemList.length === 0 ? (
             <li>Empty list</li>
           ) : (
-            itemList.map((item) => <li>{item}</li>)
+            itemList.map((item, idx) => <TodoItem key={idx} name={item} />)
           )}
         </ul>
       </div>
